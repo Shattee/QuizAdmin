@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+
+        {% if title %}
+        <title>{{ title }} - QuizMann!</title>
+        {% else %}
+        <title>Welcome to QuizMann</title>
+        {% endif %}
+    </head>
+
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>
