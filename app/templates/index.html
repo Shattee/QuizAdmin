@@ -1,6 +1,10 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
 {% block content %}
     <h1>Welcome user!</h1>
     <a href="/displayQuiz">Take a Quiz!</a>
+    <p>If you are an admin? <a href="{{ url_for('signup') }}">Click to Sign Up!</a></p>
+    <p>Already an admin? <a href="{{ url_for('login') }}">Log in here!</a></p>
+    <p>Already signed up as an admin <a href= '/admin'> Change information(admin only)</a>  </p>
+    <p>To log out:  <a href="{{ url_for('logout') }}"> Click me!</a> </p>
 {% endblock %}

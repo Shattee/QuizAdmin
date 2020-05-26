@@ -1,45 +1,5 @@
 {% extends 'admin/master.html' %}
 
 {% block body %}
-
-{{ super() }}
-
-{% if current_user.is_authenticated %}
-
-
-
-
-
-
-
-Welcome to Admin System
-
-{% else %}
-
-{{ form.hidden_tag() if form.hidden_tag }}
-
-{% for f in form if f.type != 'CSRFTokenField' %}
-
-{{ f.label }}
-
-{{ f }}
-
-{% if f.errors %}
-
-{% for e in f.errors %}
-
-{{ e }}
-
-{% endfor %}
-
-{% endif %}
-
-{% endfor %}
-
-Login
-
-{{ link | safe }}
-
-{% endif %}
-
+    <p>To log out:  <a href="{{ url_for('logout') }}"> Click me!</a> </p>
 {% endblock body %}
