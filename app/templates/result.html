@@ -9,5 +9,8 @@
         <p>
             You scored {{score}} out of {{maxScore}} 
         </p>
+        {% for n in rightques %}
+            <b>You got question {{ n }} right </b><br>
+        {% endfor %}
     </body>
 </html>

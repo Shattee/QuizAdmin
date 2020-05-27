@@ -54,12 +54,15 @@ def displayQuiz():
 def postQuiz():
     if request.method == "POST":
         score = 0
-        maxScore = Questions.query.count()
-        for q_id in range(1, maxScore + 1):
+        maxscore = Questions.query.count()
+        rightques=[]
+        for q_id in range(1, maxscore + 1):
             # print(str(Questions.query.get(q_id).answer), request.form["question_" + str(q_id)], sep="\t")
             if str(Questions.query.get(q_id).answer) == request.form["question_" + str(q_id)]:
                 score += 1
-    return render_template('result.html', score=score, maxScore=maxScore)
+                rightques.append(q_id)
+
+    return render_template('result.html', score=score, maxScore=maxscore, rightques=rightques)
 
 
 @app.route('/adminEdit', methods=['POST'])

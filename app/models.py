@@ -30,7 +30,6 @@ class Questions(db.Model):
     optionC = db.Column(db.String(200))
     optionD = db.Column(db.String(200))
     answer = db.Column(db.String(200))
-    setId = db.Column(db.Integer)
 
     def __repr__(self):
         return f"Questions('{self.question}', '{self.optionA}', '{self.optionB}', '{self.optionC}', '{self.optionD}'," \
