@@ -1,25 +1,96 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="nr_left">
+  <div class="test">
     <form action="/postQuiz" method="POST" novalidate>
-        <ol>
-        {% for q in questions %}
-            <li> <b> {{q.question}} </b> </li>
-            <br>
-                <input type="radio" name = "question_{{q.id}}" value="A" id = "{{q.id}}optionA">
-                <i>A.</i> <label for= "{{q.id}}optionA" > {{q.optionA}} </label>
-            <br>
-                <input type="radio" name = "question_{{q.id}}" value="B" id = "{{q.id}}optionB">
-                <i>B.</i> <label for = "{{q.id}}optionA" > {{q.optionB}} </label>
-            <br>
-                <input type="radio" name = "question_{{q.id}}" value="C" id = "{{q.id}}optionC">
-                <i>C.</i> <label for= "{{q.id}}optionA" > {{q.optionC}} </label>
-            <br>
-                <input type="radio" name = "question_{{q.id}}" value="D" id = "{{q.id}}optionC">
-                <i>D.</i> <label for= "{{q.id}}optionA" > {{q.optionD}} </label>
-            <br><br><br>
-        {% endfor %}
-        </ol>
-        <input type="submit" value="Submit Response">
+      <div class="test_title">
+						<input type="submit" value="Submit">
+			</div>
+      <div class="test_content">
+
+          <ol>
+          {% for q in questions %}
+          <li id="{{q.id}}" >
+            <div class="test_content_nr_tt">
+              <span>(1mark)</span><font><b>{{q.question}}</b></font>
+            </div>
+            <div class="test_content_nr_main">
+              <ul>
+                <li class="option">
+                  <input type="radio" name = "question_{{q.id}}" value="A" id = "{{q.id}}optionA">
+                  <i>A.</i><label for= "{{q.id}}optionA" > {{q.optionA}}</label>
+                </li>
+                <li class="option">
+                  <input type="radio" name = "question_{{q.id}}" value="B" id = "{{q.id}}optionB">
+                  <i>B.</i> <label for = "{{q.id}}optionA" > {{q.optionB}} </label>
+                </li>
+                <li class="option">
+                  <input type="radio" name = "question_{{q.id}}" value="C" id = "{{q.id}}optionC">
+                  <i>C.</i> <label for= "{{q.id}}optionA" > {{q.optionC}} </label>
+                </li>
+                <li class="option">
+                  <input type="radio" name = "question_{{q.id}}" value="D" id = "{{q.id}}optionC">
+                  <i>D.</i> <label for= "{{q.id}}optionA" > {{q.optionD}} </label>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+              <br><br><br>
+          {% endfor %}
+          </ol>
+
+
+      </div>
+
     </form>
+  </div>
+
+</div>
+
+
+<div class="nr_right">
+  <div class="nr_rt_main">
+    <div class="rt_nr1">
+      <div class="rt_nr1_title">
+        <h1>
+          Answersheet
+        </h1>
+      </div>
+
+        <div class="rt_content" >
+          <div class="rt_content_tt">
+            <h2>Mutichoice</h2>
+          </div>
+          <div class="rt_content_nr answerSheet">
+            <ul>
+
+                    <li><a href="#1">1</a></li>
+
+                    <li><a href="#2">2</a></li>
+
+                    <li><a href="#3">3</a></li>
+
+                    <li><a href="#4">4</a></li>
+
+                    <li><a href="#5">5</a></li>
+
+                    <li><a href="#6">6</a></li>
+
+                    <li><a href="#7">7</a></li>
+
+                    <li><a href="#8">8</a></li>
+
+
+
+            </ul>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
 {% endblock %}

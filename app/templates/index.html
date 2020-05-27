@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome user!</h1>
-    <ul>
-    <li><a href="/displayQuiz">Take a Quiz!</a></li>
-    <li><p>Need register an admin account? <a href="{{ url_for('signup') }}">Click to Sign Up!</a></p></li>
-    <li><p>Already an admin? <a href="{{ url_for('login') }}">Log in here!</a></p></li>
-    <li><p>Already signed up as an admin <a href= '/admin'> Change Question and Add User(admin only)</a></p></li>
-    <li><p>Want to log out?  <a href="{{ url_for('logout') }}"> Click me!</a> </p></li>
-    </ul>
+    <div class="index">
+        <h2>Welcome!</h2>
+        <ul class="navbarVer">
+          <li><p><a href="/displayQuiz">Let's start a driving quiz!</a></p></li>
+          <li><p><a href="{{ url_for('signup') }}">Need register an admin account?</a></p></li>
+          <li><p><a href="{{ url_for('login') }}">Already an admin? Log in here!</a></p></li>
+          <li><p><a href= '/admin'> Change Question and Add User.(admin only)</a></p></li>
+          <li><p><a href="{{ url_for('logout') }}"> Log out.</a> </p></li>
+        </ul>
+    </div>
+
 
 {% endblock %}
