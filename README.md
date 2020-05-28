@@ -3,7 +3,7 @@ AgileProject2
 
 1. only allowed email can register as an admin role, default email for registerion: cat@test.com
 2. After log in as an admin, the admin page is able to change questions and add users.
-3. To take the quiz, you have to be an admin, or the admin add a student account at the admin page.
+3. To take the quiz, you have to be an admin, or the admin add a student account in advance at the admin page.
 
 required modules
 alembic==1.4.2
