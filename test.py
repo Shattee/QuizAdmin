@@ -18,6 +18,8 @@ class FlaskTestCase(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/login', data = dict(username="admin", password
         ="admin"), follow_redirects=True)
+        self.assertTrue(b'Welcome' in response.data)
+
 
 class UserModel(unittest.TestCase):
     def setUp(self) -> None:
@@ -26,16 +28,15 @@ class UserModel(unittest.TestCase):
             'sqlite:///' + os.path.join(basedir, 'test.db')
         self.app = app.test_client()
         db.create_all()
-    def testQues(self):
+    def appendQues(self):
 
-        q1 = Questions(id=1, question="When driving in fog, you should use your: ", optionA="Fog lights only.",
+        q = Questions(id=50, question=" in fog, you should use your: ", optionA=" lights only.",
                        optionB="High beams.",
-                       optionC="Low beams.", optionD="Fog lights and Low beams.", answer="C")
-        q2 = Questions(id=2, question="A white painted curb means: ", optionA="Loading zone for freight or passengers.",
-                       optionB="Loading zone for passengers or mail only.", optionC="Loading zone for freight only.",
-                       optionD="Loading zone only for mail", answer="B")
-        db.session.add_all([q1, q2])
+                       optionC="Low .", optionD="Fog lights and Low beams.", answer="C")
+        db.session.add(q)
         db.session.commit()
+        q1 = Questions.query.filter_by(id=50).first()
+        self.assertIsNotNone(q1)
 
     def tearDown(self):
         db.session.remove()
