@@ -69,8 +69,4 @@ def postQuiz():
     return render_template('result.html', score=score, maxScore=maxscore, rightques=rightques)
 
 
-@app.route('/adminEdit', methods=['POST'])
-def edit():
-    return render_template('AdminIndex.html')
-
 
