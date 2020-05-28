@@ -1,8 +1,10 @@
 from flask import *
 from app import app, db
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_required
 from app.models import *
 from app.forms import LoginForm, RegistrationForm
+
+
 
 @app.route('/')
 @app.route('/index')
@@ -45,6 +47,7 @@ def logout():
     return redirect(url_for('mainPage'))
 
 @app.route('/displayQuiz', methods=['GET', 'POST'])
+@login_required
 def displayQuiz():
     all_questions = Questions.query.all()
     return render_template('displayQuiz.html', questions=all_questions)

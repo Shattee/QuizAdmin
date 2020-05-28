@@ -45,3 +45,4 @@ admin.add_view(MyModelView(Questions, db.session))
 admin.add_view(MyModelView(User, db.session))
 
 
+

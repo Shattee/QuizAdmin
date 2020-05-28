@@ -4,6 +4,13 @@
 body{
   background-color: #e6ffff;
 }
+
+.result{
+  background-color: cyan;
+  height: 80px;
+  width: 960px;
+  margin: 0 auto;
+}
 h1{
   color : coral;
   font-family:verdana;
@@ -87,6 +94,7 @@ ul.navbarVer{
   padding: 0;
   overflow: hidden;
   width:100%;
+
 }
 ul.navbarVer>li{
   display: block;

@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-
+<style>
+    ul.navbarVer{
+        border: 2px solid cadetblue;
+    }
+</style>
 {% block content %}
     <div class="index">
-        <h2>Welcome!</h2>
+        <h2 align="center">Welcome!</h2>
         <ul class="navbarVer">
           <li><p><a href="/displayQuiz">Let's start a driving quiz!</a></p></li>
           <li><p><a href="{{ url_for('signup') }}">Need register an admin account?</a></p></li>
