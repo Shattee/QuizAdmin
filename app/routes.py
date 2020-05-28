@@ -54,6 +54,7 @@ def displayQuiz():
 
 
 @app.route('/postQuiz', methods=['POST'])
+@login_required
 def postQuiz():
     if request.method == "POST":
         score = 0
