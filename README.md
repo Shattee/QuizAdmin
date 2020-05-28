@@ -1,5 +1,7 @@
 # Dirver Quiz
 AgileProject2
+Student Name:Huanyu Zhou, Hao Li
+Student Number:22829755, 
 
 1. only allowed email can register as an admin role, default email for registerion: cat@test.com
 2. After log in as an admin, the admin page is able to change questions and add users.
