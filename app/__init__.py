@@ -30,6 +30,7 @@ from app.models import Questions, User
 #insert default questions
 db.drop_all()
 db.create_all()
+u1 = User(username="admin", password="admin")
 q1 = Questions(id=1, question=" To avoid last minute moves, you should be looking down the road to "
                               "where your vehicle will be in about ______________.", optionA="5 to 10 seconds",
                optionB="10 to 15 seconds", optionC="15 to 20 seconds", optionD="10 to 20 seconds", answer="C")
@@ -67,5 +68,5 @@ q8 = Questions(id=8, question="You may legally block an intersection: ",
                optionC="During rush hour traffic.", optionD="After officer's permission", answer="B")
 
 
-db.session.add_all([q1, q2, q3, q4, q5, q6, q7, q8])
+db.session.add_all([u1, q1, q2, q3, q4, q5, q6, q7, q8])
 db.session.commit()
